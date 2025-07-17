@@ -1,9 +1,42 @@
 estudiantes = {}
+
+def registro_estudiantes():
+    cantidad = int(input("Cuantos estudiantes desea regristrar: "))
+    for i in range (cantidad):
+        carnet = int(input("Ingrese el carnet: "))
+        nombre = input("Ingrese el nombre completo: ")
+        edad = int(input("Ingrese la edad: "))
+        carrera = input("Ingrese la carrera: ")
+
+        cantidad2 = int(input("Cuantos cursos desea inscribir: "))
+        for x in range(cantidad2):
+            nombre_curso = input("Ingrese el nombre del curso: ")
+            nota_tarea = float(input("Ingrese la nota de tareas de (0 - 100): "))
+            nota_parcial = float(input("Ingrese la nota de parcial (0 - 100): "))
+            nota_proyecto = float(input("Ingrese la nota del proyecto (0 - 100): "))
+
+def mostrar_estudiantes_cursos():
+    print("a")
+def busqueda_carnet():
+    print("a")
 opciones = 0
-p = False
-while p == False:
+e = False
+while e == False:
     print("====Menu====")
     print("1. Registrar estudiantes")
     print("2. Mostrar todos los estudiantes y sus cursos")
     print("3. Buscar estudiante por carnet")
     print("4. Salir")
+    opciones = int(input("Elija una opcion: "))
+    match opciones:
+        case 1:
+            registro_estudiantes()
+        case 2:
+            mostrar_estudiantes_cursos()
+        case 3:
+            busqueda_carnet()
+        case 4:
+            print("Gracias por usar el sistema")
+            e = True
+        case _:
+            print("Opcion invalida")
