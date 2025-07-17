@@ -23,14 +23,19 @@ def registro_estudiantes():
             "nombre_curso": nombre_curso,
             "nota_tarea": nota_tarea,
             "nota_parcial": nota_parcial,
-            'nota_proyecto': nota_proyecto
+            "nota_proyecto": nota_proyecto
         }
     }
 
 def mostrar_estudiantes_cursos():
     print("a")
 def busqueda_carnet():
-    print("a")
+    print("====Buscar estudiante====")
+    buscar = int(input("Ingrese el carnet del estudiante: "))
+    if buscar in estudiantes:
+        print(f"")
+
+
 opciones = 0
 e = False
 while e == False:
