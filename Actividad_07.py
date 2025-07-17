@@ -15,17 +15,18 @@ def registro_estudiantes():
             nota_parcial = float(input("Ingrese la nota de parcial (0 - 100): "))
             nota_proyecto = float(input("Ingrese la nota del proyecto (0 - 100): "))
 
-    estudiantes[carnet] = {
-        "nombre": nombre,
-        "edad": edad,
-        "carrera": carrera,
-        "cursos":{
-            "nombre_curso": nombre_curso,
-            "nota_tarea": nota_tarea,
-            "nota_parcial": nota_parcial,
-            "nota_proyecto": nota_proyecto
+        estudiantes[carnet] = {
+            "nombre": nombre,
+            "edad": edad,
+            "carrera": carrera,
+            "cursos":{
+                "nombre_curso": nombre_curso,
+                "nota_tarea": nota_tarea,
+                "nota_parcial": nota_parcial,
+                "nota_proyecto": nota_proyecto
+            }
         }
-    }
+        print("\nSe ha registrado al estudiante")
 
 def mostrar_estudiantes_cursos():
     print("a")
@@ -33,7 +34,10 @@ def busqueda_carnet():
     print("====Buscar estudiante====")
     buscar = int(input("Ingrese el carnet del estudiante: "))
     if buscar in estudiantes:
+        print(f"Nombre:{estudiantes[buscar]['nombre']}, Edad: {estudiantes[buscar]['edad']}, Carrera: {estudiantes[buscar]['carrera']}")
         print(f"")
+    else:
+        print("Estudiante no encontrado")
 
 
 opciones = 0
