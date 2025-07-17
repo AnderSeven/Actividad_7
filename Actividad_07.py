@@ -31,7 +31,7 @@ def registro_estudiantes():
 def mostrar_estudiantes_cursos():
     print("====Estudiantes inscritos===")
     if len(estudiantes) > 0:
-        for i in estudiantes.items():
+        for i, datos in estudiantes.items():
             print(f"Nombre: {estudiantes[i]['nombre']}, Edad: {estudiantes[i]['edad']}, Carrera: {estudiantes[i]['carrera']}")
     else:
         print("No hay estudiantes registrados")
