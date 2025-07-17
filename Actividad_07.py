@@ -29,14 +29,18 @@ def registro_estudiantes():
         print("\nSe ha registrado al estudiante")
 
 def mostrar_estudiantes_cursos():
-    print("a")
+    print("====Estudiantes inscritos===")
+    if len(estudiantes) > 0:
+        for i in estudiantes.items():
+            print(f"Nombre: {estudiantes[i]['nombre']}, Edad: {estudiantes[i]['edad']}, Carrera: {estudiantes[i]['carrera']}")
+    else:
+        print("No hay estudiantes registrados")
 def busqueda_carnet():
     print("====Buscar estudiante====")
     buscar = int(input("Ingrese el carnet del estudiante: "))
     if buscar in estudiantes:
         print(f"Nombre: {estudiantes[buscar]['nombre']}, Edad: {estudiantes[buscar]['edad']}, Carrera: {estudiantes[buscar]['carrera']}")
-        for i in {estudiantes[buscar]['cursos']}:
-            print(f"Curso: {estudiantes[buscar]['nombre_curso']}, Nota de tarea: {estudiantes[buscar]['nota_tarea']}, Nota de parcial: {estudiantes[buscar]['nota_parcial']}, Nota de proyecto: {estudiantes[buscar]['nota_proyecto']}")
+        print(f"Curso: {estudiantes[buscar]['nombre_curso']}, Nota de tarea: {estudiantes[buscar]['nota_tarea']}, Nota de parcial: {estudiantes[buscar]['nota_parcial']}, Nota de proyecto: {estudiantes[buscar]['nota_proyecto']}")
     else:
         print("Estudiante no encontrado")
 
