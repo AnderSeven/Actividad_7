@@ -15,6 +15,18 @@ def registro_estudiantes():
             nota_parcial = float(input("Ingrese la nota de parcial (0 - 100): "))
             nota_proyecto = float(input("Ingrese la nota del proyecto (0 - 100): "))
 
+    estudiantes[carnet] = {
+        "nombre": nombre,
+        "edad": edad,
+        "carrera": carrera,
+        "cursos":{
+            "nombre_curso": nombre_curso,
+            "nota_tarea": nota_tarea,
+            "nota_parcial": nota_parcial,
+            'nota_proyecto': nota_proyecto
+        }
+    }
+
 def mostrar_estudiantes_cursos():
     print("a")
 def busqueda_carnet():
