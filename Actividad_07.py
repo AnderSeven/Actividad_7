@@ -35,11 +35,10 @@ def busqueda_carnet():
     buscar = int(input("Ingrese el carnet del estudiante: "))
     if buscar in estudiantes:
         print(f"Nombre: {estudiantes[buscar]['nombre']}, Edad: {estudiantes[buscar]['edad']}, Carrera: {estudiantes[buscar]['carrera']}")
-        for i in range(estudiantes["cursos"]):
+        for i in {estudiantes[buscar]['cursos']}:
             print(f"Curso: {estudiantes[buscar]['nombre_curso']}, Nota de tarea: {estudiantes[buscar]['nota_tarea']}, Nota de parcial: {estudiantes[buscar]['nota_parcial']}, Nota de proyecto: {estudiantes[buscar]['nota_proyecto']}")
     else:
         print("Estudiante no encontrado")
-
 
 opciones = 0
 e = False
