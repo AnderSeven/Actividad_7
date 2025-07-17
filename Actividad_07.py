@@ -10,7 +10,7 @@ def registro_estudiantes():
 
         cantidad2 = int(input("Cuantos cursos desea inscribir: "))
         for x in range(cantidad2):
-            nombre_curso = input("Ingrese el nombre del curso: ")
+            nombre_curso = input("\nIngrese el nombre del curso: ")
             nota_tarea = float(input("Ingrese la nota de tareas de (0 - 100): "))
             nota_parcial = float(input("Ingrese la nota de parcial (0 - 100): "))
             nota_proyecto = float(input("Ingrese la nota del proyecto (0 - 100): "))
@@ -34,8 +34,9 @@ def busqueda_carnet():
     print("====Buscar estudiante====")
     buscar = int(input("Ingrese el carnet del estudiante: "))
     if buscar in estudiantes:
-        print(f"Nombre:{estudiantes[buscar]['nombre']}, Edad: {estudiantes[buscar]['edad']}, Carrera: {estudiantes[buscar]['carrera']}")
-        print(f"")
+        print(f"Nombre: {estudiantes[buscar]['nombre']}, Edad: {estudiantes[buscar]['edad']}, Carrera: {estudiantes[buscar]['carrera']}")
+        for i in range(estudiantes["cursos"]):
+            print(f"Curso: {estudiantes[buscar]['nombre_curso']}, Nota de tarea: {estudiantes[buscar]['nota_tarea']}, Nota de parcial: {estudiantes[buscar]['nota_parcial']}, Nota de proyecto: {estudiantes[buscar]['nota_proyecto']}")
     else:
         print("Estudiante no encontrado")
 
