@@ -8,6 +8,13 @@ def registro_estudiantes():
         edad = int(input("Ingrese la edad: "))
         carrera = input("Ingrese la carrera: ")
 
+        estudiantes[carnet] = {
+            "nombre": nombre,
+            "edad": edad,
+            "carrera": carrera,
+            "cursos":{}
+        }
+
         cantidad2 = int(input("Cuantos cursos desea inscribir: "))
         for x in range(cantidad2):
             nombre_curso = input("\nIngrese el nombre del curso: ")
@@ -15,18 +22,19 @@ def registro_estudiantes():
             nota_parcial = float(input("Ingrese la nota de parcial (0 - 100): "))
             nota_proyecto = float(input("Ingrese la nota del proyecto (0 - 100): "))
 
-        estudiantes[carnet] = {
-            "nombre": nombre,
-            "edad": edad,
-            "carrera": carrera,
-            "cursos":{
-                "nombre_curso": nombre_curso,
-                "nota_tarea": nota_tarea,
-                "nota_parcial": nota_parcial,
-                "nota_proyecto": nota_proyecto
+            estudiantes[carnet] = {
+                "nombre": nombre,
+                "edad": edad,
+                "carrera": carrera,
+                "cursos":{
+                    "nombre_curso": nombre_curso,
+                    "nota_tarea": nota_tarea,
+                    "nota_parcial": nota_parcial,
+                    "nota_proyecto": nota_proyecto
+                }
             }
-        }
-        print("\nSe ha registrado al estudiante")
+            print("\nSe ha registrado el curso")
+        print("\nSe ha registrado el estudiante")
 
 def mostrar_estudiantes_cursos():
     print("====Estudiantes inscritos===")
