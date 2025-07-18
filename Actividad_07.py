@@ -33,8 +33,19 @@ def registro_estudiantes():
 def mostrar_estudiantes_cursos():
     print("====Estudiantes inscritos===")
     if len(estudiantes) > 0:
-        for i, datos in estudiantes.items():
-            print(f"Nombre: {estudiantes[i]['nombre']}, Edad: {estudiantes[i]['edad']}, Carrera: {estudiantes[i]['carrera']}")
+        for i in estudiantes:
+            print(f"\nNombre: {estudiantes[i]['nombre']}, Carnet: {estudiantes[i]['carnet']}, Edad: {estudiantes[i]['edad']}, Carrera: {estudiantes[i]['carrera']}")
+            print(f"Cursos: ")
+            for curso in estudiantes[i]["cursos"]:
+                nota_tarea = estudiantes[i]["cursos"][curso]["nota_tarea"]
+                nota_parcial = estudiantes[i]["cursos"][curso]["nota_parcial"]
+                nota_proyecto = estudiantes[i]["cursos"][curso]["nota_proyecto"]
+                promedio = (nota_tarea + nota_parcial + nota_proyecto) / 3
+                print(f"-{curso}-")
+                print(f"Nota de tarea: {nota_tarea}")
+                print(f"Nota de parcial: {nota_parcial}")
+                print(f"Nota de proyecto: {nota_proyecto}")
+                print(f"Promedio: {promedio}")
     else:
         print("No hay estudiantes registrados")
 
@@ -45,7 +56,7 @@ def busqueda_carnet():
         print(f"Nombre: {estudiantes[buscar]['nombre']}, Edad: {estudiantes[buscar]['edad']}, Carrera: {estudiantes[buscar]['carrera']}")
         print("Cursos:")
         for curso, notas in estudiantes[buscar]["cursos"].items():
-            print(f"{curso}")
+            print(f"\n-{curso}-")
             print(f"Nota de tarea: {notas['nota_tarea']}")
             print(f"Nota de parcial: {notas['nota_parcial']}")
             print(f"Nota de proyecto: {notas['nota_proyecto']}")
