@@ -1,11 +1,23 @@
 estudiantes = {}
 
 def registro_estudiantes():
-    cantidad = int(input("Cuantos estudiantes desea regristrar: "))
+    a = False
+    while a == False:
+        cantidad = int(input("Cuantos estudiantes desea regristrar: "))
+        if cantidad > 0:
+            a = True
+        else:
+            print("La cantidad debe de ser mayor a 0")
     for i in range (cantidad):
         carnet = int(input("Ingrese el carnet: "))
         nombre = input("Ingrese el nombre completo: ")
-        edad = int(input("Ingrese la edad: "))
+        a = False
+        while a == False:
+            edad = int(input("Ingrese la edad: "))
+            if edad > 0 and edad < 100:
+                a = True
+            else:
+                print("Edad invalida")
         carrera = input("Ingrese la carrera: ")
 
         estudiantes[carnet] = {
@@ -15,12 +27,36 @@ def registro_estudiantes():
             "cursos":{}
         }
 
-        cantidad2 = int(input("Cuantos cursos desea inscribir: "))
+        a = False
+        while a == False:
+            cantidad2 = int(input("Cuantos cursos desea inscribir: "))
+            if cantidad2 > 0:
+                a = True
+            else:
+                print("Cantidad invalida")
         for x in range(cantidad2):
             nombre_curso = input("\nIngrese el nombre del curso: ")
-            nota_tarea = float(input("Ingrese la nota de tareas de (0 - 100): "))
-            nota_parcial = float(input("Ingrese la nota de parcial (0 - 100): "))
-            nota_proyecto = float(input("Ingrese la nota del proyecto (0 - 100): "))
+            a = False
+            while a == False:
+                nota_tarea = float(input("Ingrese la nota de tareas de (0 - 100): "))
+                if nota_tarea >= 0 and nota_tarea <= 100:
+                    a = True
+                else:
+                    print("Nota invalida")
+            a = False
+            while a == False:
+                nota_parcial = float(input("Ingrese la nota de parcial (0 - 100): "))
+                if nota_parcial >= 0 and nota_parcial <= 100:
+                    a = True
+                else:
+                    print("Nota invalida")
+            a = False
+            while a == False:
+                nota_proyecto = float(input("Ingrese la nota del proyecto (0 - 100): "))
+                if nota_proyecto >= 0 and nota_proyecto <= 100:
+                    a = True
+                else:
+                    print("Nota invalida")
 
             estudiantes[carnet]["cursos"][nombre_curso] = {
                 "nota_tarea": nota_tarea,
